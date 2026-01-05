@@ -1,0 +1,213 @@
+/* ===============================
+   RESET
+================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f4f2ee; /* premium stone */
+  color: #2b2622;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* ===============================
+   LAYOUT
+================================ */
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  grid-template-rows: 88px 1fr;
+}
+
+/* ===============================
+   HEADER
+================================ */
+.container h1 {
+  grid-column: 1 / -1;
+  padding: 28px 48px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2.15rem;
+  font-weight: 600;
+  background: #f7f5f2;
+  border-bottom: 1px solid #d8d2c8;
+}
+
+/* ===============================
+   SIDEBAR (FORM)
+================================ */
+form {
+  grid-column: 1;
+  grid-row: 2;
+  padding: 48px 28px;
+  background: #ebe6dd;
+  border-right: 1px solid #d2c8bb;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+form::before {
+  content: "New Task";
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7a6f63;
+  margin-bottom: 6px;
+}
+
+/* Inputs */
+input,
+textarea {
+  background: #ffffff;
+  border: 1px solid #d3c9bc;
+  padding: 13px 14px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  color: #2b2622;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #8a7d6b;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+/* Add button */
+.btn-add {
+  margin-top: 26px;
+  background: #2b2622;
+  color: #f6f4f1;
+  border: none;
+  padding: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  background: #1f1b18;
+}
+
+/* ===============================
+   TASK AREA
+================================ */
+.task-list {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 56px;
+  background: #faf9f7;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 34px;
+  align-content: start;
+}
+
+.task-list::before {
+  content: "Tasks";
+  grid-column: 1 / -1;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #ddd6cb;
+}
+
+/* ===============================
+   TASK CARD
+================================ */
+.task-card {
+  background: #ffffff;
+  border: 1px solid #e3ddd4;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* View mode */
+.view-mode strong {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.view-mode p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #5f564c;
+}
+
+/* ===============================
+   EDIT MODE
+================================ */
+.edit-mode {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Edit */
+.btn-edit {
+  background: #e8e2d8;
+  border: 1px solid #d3c9bc;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* Save */
+.btn-save {
+  background: #2b2622;
+  color: #f6f4f1;
+  border: none;
+  padding: 10px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Cancel */
+.btn-cancel {
+  background: transparent;
+  border: 1px solid #d3c9bc;
+  color: #6b6055;
+  padding: 10px 18px;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-cancel:hover {
+  background: #f2efe9;
+}
+
+/* Delete */
+.btn-delete {
+  background: transparent;
+  border: 1px solid #c89b9b;
+  color: #8a3a3a;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
